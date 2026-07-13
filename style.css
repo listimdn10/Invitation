@@ -269,9 +269,9 @@ p {
 .romance-quote {
     margin: 0 auto 16px;
     max-width: 220px;
-    font-family: "Forum", serif;
-    font-size: 1.02rem;
-    line-height: 1.6;
+    font-family: "Lora", serif;
+    font-size: 1rem;
+    line-height: 1.7;
     font-style: italic;
     text-align: center;
     color: #7a4f61;
