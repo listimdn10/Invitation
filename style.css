@@ -6,6 +6,7 @@
 
 :root {
     --book-width: min(42vw, 420px);
+    --book-scale: 1;
     --page-shift-open: 50%;
     --page-shift-closed-end: 100%;
     --nav-size: clamp(38px, 4vw, 50px);
@@ -34,6 +35,8 @@ body {
 .book {
     position: relative;
     width: var(--book-width);
+    scale: var(--book-scale);
+    transform-origin: center center;
     aspect-ratio: 569 / 814;
     transition: transform 0.5s;
     border-radius: 5px; /* Bo góc nhẹ */
@@ -371,6 +374,7 @@ p {
 @media (max-width: 768px) {
     :root {
         --book-width: min(68vw, 320px);
+        --book-scale: 0.72;
         --page-shift-open: 24%;
         --page-shift-closed-end: 48%;
         --nav-size: 36px;
@@ -418,9 +422,10 @@ p {
 @media (max-width: 480px) {
     :root {
         --book-width: min(72vw, 280px);
-        --page-shift-open: 18%;
-        --page-shift-closed-end: 36%;
-        --nav-size: 32px;
+        --book-scale: 0.56;
+        --page-shift-open: 10%;
+        --page-shift-closed-end: 20%;
+        --nav-size: 30px;
         --nav-edge: 8px;
     }
 
