@@ -6,7 +6,9 @@
 
 :root {
     --book-width: min(42vw, 420px);
-    --book-scale: 1;
+    --book-scale-open: 1;
+    --book-scale-closed: 1;
+    --book-scale-closed-end: 1;
     --page-shift-open: 50%;
     --page-shift-closed-end: 100%;
     --nav-size: clamp(38px, 4vw, 50px);
@@ -33,13 +35,26 @@ body {
 
 /* Book */
 .book {
+    --active-book-scale: var(--book-scale-closed);
     position: relative;
     width: var(--book-width);
-    scale: var(--book-scale);
+    scale: var(--active-book-scale);
     transform-origin: center center;
     aspect-ratio: 569 / 814;
     transition: transform 0.5s;
     border-radius: 5px; /* Bo góc nhẹ */
+}
+
+.book.is-open-spread {
+    --active-book-scale: var(--book-scale-open);
+}
+
+.book.is-closed-end {
+    --active-book-scale: var(--book-scale-closed-end);
+}
+
+.book.is-dragging {
+    transition: none;
 }
 
 
@@ -374,7 +389,9 @@ p {
 @media (max-width: 768px) {
     :root {
         --book-width: min(68vw, 320px);
-        --book-scale: 0.72;
+        --book-scale-open: 0.72;
+        --book-scale-closed: 0.94;
+        --book-scale-closed-end: 0.94;
         --page-shift-open: 24%;
         --page-shift-closed-end: 48%;
         --nav-size: 36px;
@@ -383,6 +400,10 @@ p {
 
     body {
         padding: 12px;
+    }
+
+    .book {
+        touch-action: none;
     }
 
     .content-page {
@@ -421,10 +442,12 @@ p {
 
 @media (max-width: 480px) {
     :root {
-        --book-width: min(72vw, 280px);
-        --book-scale: 0.56;
-        --page-shift-open: 10%;
-        --page-shift-closed-end: 20%;
+        --book-width: min(66vw, 260px);
+        --book-scale-open: 0.72;
+        --book-scale-closed: 1;
+        --book-scale-closed-end: 0.98;
+        --page-shift-open: 4%;
+        --page-shift-closed-end: 8%;
         --nav-size: 30px;
         --nav-edge: 8px;
     }
