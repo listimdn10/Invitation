@@ -17,20 +17,64 @@
 
 body {
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-family: "Nunito", sans-serif;
     overflow: hidden;
-    padding: 20px;
-
+    margin: 0;
     background: linear-gradient(to bottom, rgba(247, 173, 210, 0.972), rgb(251, 104, 126));
+}
 
-    /* Hình nền (image background) */
-    /* background-image: url('loopi.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center; */
+.mobile-carousel {
+    width: min(100%, 430px);
+}
+
+.mobile-page {
+    position: relative;
+    min-height: min(78vh, 720px);
+    padding: 28px 18px;
+    border-radius: 28px;
+    background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.97), rgba(255, 247, 250, 0.94)),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 242, 247, 0.92));
+    box-shadow: 0 16px 40px rgba(82, 33, 50, 0.24);
+    overflow: hidden;
+}
+
+.mobile-cover-page {
+    padding: 0;
+}
+
+.mobile-cover-page img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.mobile-spread-page,
+.mobile-back-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-nav-btn {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: rgba(79, 57, 64, 0.85);
+}
+
+.mobile-nav-btn i {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 14%;
+    opacity: 1;
 }
 
 /* Book */
@@ -393,17 +437,17 @@ p {
         --book-scale-closed: 0.94;
         --book-scale-closed-end: 0.94;
         --page-shift-open: 24%;
-        --page-shift-closed-end: 48%;
+        --page-shift-closed-end: 100%;
         --nav-size: 36px;
         --nav-edge: 10px;
     }
 
     body {
-        padding: 12px;
+        padding: 0;
     }
 
     .book {
-        touch-action: none;
+        touch-action: auto;
     }
 
     .content-page {
@@ -447,13 +491,13 @@ p {
         --book-scale-closed: 1;
         --book-scale-closed-end: 0.98;
         --page-shift-open: 4%;
-        --page-shift-closed-end: 8%;
+        --page-shift-closed-end: 100%;
         --nav-size: 30px;
         --nav-edge: 8px;
     }
 
     body {
-        padding: 8px;
+        padding: 0;
     }
 
     .content-page {
